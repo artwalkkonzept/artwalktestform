@@ -4,11 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client",
     "dev": "cd client && npm start",
-    "preinstall": " npm install",
+    "test": "cd client && npm test",
+    "preinstall": "npm install",
     "install": "cd client && npm install",
     "build": "cd client && npm run build"
   },
