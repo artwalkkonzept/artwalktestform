@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 //import logo from './logo.svg';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 
 function App() {
   const [artwalks, setArtwalks] = useState([
@@ -59,10 +61,13 @@ function App() {
   return (
     <div className="App">
       <h3>Add Artwalk</h3>
-      <form>
-        <input onChange={handleChange} name="title" value={artwalk.title}></input>
-        <input onChange={handleChange} name="description" value={artwalk.description}></input>
-        <input onChange={handleChange} name="date" value={artwalk.date}></input>
+      <form class="formPost">
+        <p>Title</p>
+        <li><input onChange={handleChange} name="title" value={artwalk.title}></input></li>
+        <p>Description</p>
+        <li><input onChange={handleChange} name="description" value={artwalk.description}></input></li>
+        <p>Date</p>
+        <li><input onChange={handleChange} name="date" value={artwalk.date}></input></li>
         <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
