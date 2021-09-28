@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 //import logo from './logo.svg';
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
+
 import './App.css';
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
             <h1>{artwalk.title}</h1>
             <p>{artwalk.description}</p>
             <p>{artwalk.date}</p>
-            <button onClick={() => deleteArtwalk(artwalk._id)}>DELETE</button>
+            <button class="btn btn-primary" onClick={() => deleteArtwalk(artwalk._id)}>DELETE</button>
           </div>
         ) 
       })}

@@ -1,3 +1,7 @@
-.formPost {
-    text-decoration: none;
+.App {
+  text-align: center;
+}
+
+li.formPost {
+list-style: none;
 }
