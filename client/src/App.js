@@ -73,7 +73,7 @@ function App() {
             <h1>{artwalk.title}</h1>
             <p>{artwalk.genre}</p>
             <p>{artwalk.year}</p>
-            <button onClick={() => deleteMovie(artwalk._id)}>DELETE</button>
+            <button onClick={() => deleteArtwalk(artwalk._id)}>DELETE</button>
           </div>
         ) 
       })}
