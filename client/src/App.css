@@ -1,3 +1,8 @@
+body {
+  display: block;
+  margin: 8px;
+}
+
 .App {
   text-align: left;
 }
@@ -8,12 +13,10 @@ list-style: none;
 
 .pDescription {
   text-align: left;
-  max-width: 240px;
-  margin-left: 15px;
+  max-width: 270px;
 }
 
 .h1Title {
   text-align: left;
-  max-width: 240px;
-  margin-left: 15px;
+  max-width: 270px;
 }

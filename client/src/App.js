@@ -61,12 +61,10 @@ function App() {
     <div className="App">
       <h3>Add Artwalk</h3>
       <form className="formPost">
-        <li>
-        <p>Title</p><input onChange={handleChange} name="title" value={artwalk.title}></input></li>
+        <p>Title</p><input onChange={handleChange} name="title" value={artwalk.title}></input>
+        <p>Description</p><input onChange={handleChange} name="description" value={artwalk.description}></input>
         
-        <li><p>Description</p><input onChange={handleChange} name="description" value={artwalk.description}></input></li>
-        
-        <li><p>Date</p><input onChange={handleChange} name="date" value={artwalk.date}></input></li>
+        <p>Date</p><input onChange={handleChange} name="date" value={artwalk.date}></input>
         <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
