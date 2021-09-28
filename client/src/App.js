@@ -6,16 +6,16 @@ function App() {
   const [artwalks, setArtwalks] = useState([
     {
       title: '',
-      genre: '',
-      year: ''
+      description: '',
+      date: ''
     }
   ])
 
   const [artwalk, setArtwalk] = useState(
     {
       title: '',
-      genre: '',
-      year: ''
+      description: '',
+      date: ''
     }
   )
 
@@ -44,8 +44,8 @@ function App() {
     alert("artwalk added");
     const newArtwalk = {
       title: artwalk.title,
-      genre: artwalk.genre,
-      year: artwalk.year
+      description: artwalk.description,
+      date: artwalk.date
     }
 
     axios.post('/newartwalk', newArtwalk);
@@ -58,20 +58,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Add Artwalk</h1>
+      <h3>Add Artwalk</h3>
       <form>
         <input onChange={handleChange} name="title" value={artwalk.title}></input>
-        <input onChange={handleChange} name="genre" value={artwalk.genre}></input>
-        <input onChange={handleChange} name="year" value={artwalk.year}></input>
+        <input onChange={handleChange} name="description" value={artwalk.description}></input>
+        <input onChange={handleChange} name="date" value={artwalk.date}></input>
         <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
       {artwalks.map(artwalk => {
         return (
           <div>
+            <h1>Artwalks</h1>
             <h1>{artwalk.title}</h1>
-            <p>{artwalk.genre}</p>
-            <p>{artwalk.year}</p>
+            <p>{artwalk.description}</p>
+            <p>{artwalk.date}</p>
             <button onClick={() => deleteArtwalk(artwalk._id)}>DELETE</button>
           </div>
         ) 
