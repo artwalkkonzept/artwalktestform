@@ -43,7 +43,7 @@ function App() {
   function addArtwalk(e) {
     e.preventDefault();
     alert("artwalk added");
-    const newartwalk = {
+    const newArtwalk = {
       title: artwalk.title,
       genre: artwalk.genre,
       year: artwalk.year
