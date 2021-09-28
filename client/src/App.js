@@ -4,7 +4,7 @@ import './App.css';
 import axios from "axios";
 
 function App() {
-  const [movies, setMovies] = useState([
+  const [artwalks, setArtwalks] = useState([
     {
       title: '',
       genre: '',
@@ -12,7 +12,7 @@ function App() {
     }
   ])
 
-  const [movie, setMovie] = useState(
+  const [artwalk, setArtwalk] = useState(
     {
       title: '',
       genre: '',
@@ -21,16 +21,16 @@ function App() {
   )
 
   useEffect(() => {
-    fetch('/movies').then(res => {
+    fetch('/artwalks').then(res => {
       if(res.ok) {
         return res.json()
       }
-    }).then(jsonRes => setMovies(jsonRes))
+    }).then(jsonRes => setMArtwalks(jsonRes))
   })
 
   function handleChange(e) {
     const {name, value} = e.target;
-    setMovie(prevInput => {
+    setArtwalk(prevInput => {
       return(
         {
           ...prevInput,
@@ -40,40 +40,40 @@ function App() {
     })
   }
 
-  function addMovie(e) {
+  function addArtwalk(e) {
     e.preventDefault();
-    alert("movie added");
-    const newMovie = {
-      title: movie.title,
-      genre: movie.genre,
-      year: movie.year
+    alert("artwalk added");
+    const newArtwalk = {
+      title: artwalk.title,
+      genre: artwalk.genre,
+      year: artwalk.year
     }
 
-    axios.post('/newmovie', newMovie);
+    axios.post('/newartwalk', newArtwalk);
   }
 
-  function deleteMovie(id) {
+  function deleteArtwalk(id) {
     axios.delete('/delete/' + id);
-    alert("movie deleted");
+    alert("artwalk deleted");
   }
 
   return (
     <div className="App">
-      <h1>Add Movie</h1>
+      <h1>Add Artwalk</h1>
       <form>
-        <input onChange={handleChange} name="title" value={movie.title}></input>
-        <input onChange={handleChange} name="genre" value={movie.genre}></input>
-        <input onChange={handleChange} name="year" value={movie.year}></input>
-        <button onClick={addMovie}>ADD MOVIE</button>
+        <input onChange={handleChange} name="title" value={artwalk.title}></input>
+        <input onChange={handleChange} name="genre" value={artwalk.genre}></input>
+        <input onChange={handleChange} name="year" value={artwalk.year}></input>
+        <button onClick={addMArtwalk}>ADD Artwalk</button>
       </form>
 
-      {movies.map(movie => {
+      {artwalks.map(artwalk => {
         return (
-          <div key={movie._id}>
-            <h1>{movie.title}</h1>
-            <p>{movie.genre}</p>
-            <p>{movie.year}</p>
-            <button onClick={() => deleteMovie(movie._id)}>DELETE</button>
+          <div key={artwalk._id}>
+            <h1>{artwalk.title}</h1>
+            <p>{artwalk.genre}</p>
+            <p>{artwalk.year}</p>
+            <button onClick={() => deleteArtwalk(artwalk._id)}>DELETE</button>
           </div>
         ) 
       })}
