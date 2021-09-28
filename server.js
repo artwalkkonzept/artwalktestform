@@ -10,44 +10,43 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //mongoose
-mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwakDB?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority")
 
-//data schema and modelATLAS_URI=mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/Test?retryWrites=true&w=majority
-
-const artwakSchema = {
+//data schema and model
+const movieSchema = {
     title: String,
     genre: String,
     year: String
 }
 
-const Artwak = mongoose.model("Artwak", artwakSchema);
+const Movie = mongoose.model("Movie", movieSchema);
 
 //API routes
-app.get('/artwaks', function(req, res) {
-    Artwak.find().then(artwaks => res.json(artwaks));
+app.get('/movies', function(req, res) {
+    Movie.find().then(movies => res.json(movies));
 })
 
-//add artwak
-app.post('/newartwak', function(req, res) {
+//add movie
+app.post('/newmovie', function(req, res) {
     const title = req.body.title;
     const genre = req.body.genre;
     const year = req.body.year;
 
-    const newArtwak = new Artwak({
+    const newMovie = new Movie({
         title,
         genre,
         year
     });
 
-    newArtwak.save();
+    newMovie.save();
 
 });
 
 app.delete('/delete/:id', function(req, res) {
     const id = req.params.id;
-    Artwak.findByIdAndDelete({_id: id}, function(err) {
+    Movie.findByIdAndDelete({_id: id}, function(err) {
         if(!err) {
-            console.log("artwak deleted");
+            console.log("movie deleted");
         } else {
             console.log(err);
         }
