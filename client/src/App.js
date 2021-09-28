@@ -44,7 +44,6 @@ function App() {
 
   function addArtwalk(e) {
     e.preventDefault();
-    alert("artwalk added");
     const newArtwalk = {
       title: artwalk.title,
       description: artwalk.description,
@@ -56,7 +55,6 @@ function App() {
 
   function deleteArtwalk(id) {
     axios.delete('/delete/' + id);
-    alert("artwalk deleted");
   }
 
   return (
@@ -74,9 +72,9 @@ function App() {
 
       {artwalks.map(artwalk => {
         return (
-          <div>
+          <div className="formPost">
             <h1>Artwalks</h1>
-            <h1>{artwalk.title}</h1>
+            <h1 className="h1Title">{artwalk.title}</h1>
             <p className="pDescription">{artwalk.description}</p>
             <p>{artwalk.date}</p>
             <button class="btn btn-primary" onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>

@@ -8,5 +8,12 @@ list-style: none;
 
 .pDescription {
   text-align: left;
-  max-width: 270px;
+  max-width: 240px;
+  margin-left: 15px;
+}
+
+.h1Title {
+  text-align: left;
+  max-width: 240px;
+  margin-left: 15px;
 }
