@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,KACE,iBACF,CAEA,YACA,eACA","file":"main.6fb39976.chunk.css","sourcesContent":[".App {\n  text-align: center;\n}\n\nli.formPost {\nlist-style: none;\n}"]}

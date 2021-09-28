@@ -62,13 +62,13 @@ function App() {
   return (
     <div className="App">
       <h3>Add Artwalk</h3>
-      <form class="formPost">
-        <p>Title</p>
-        <li><input onChange={handleChange} name="title" value={artwalk.title}></input></li>
-        <p>Description</p>
-        <li><input onChange={handleChange} name="description" value={artwalk.description}></input></li>
-        <p>Date</p>
-        <li><input onChange={handleChange} name="date" value={artwalk.date}></input></li>
+      <form className="formPost">
+        <li>
+        <p>Title</p><input onChange={handleChange} name="title" value={artwalk.title}></input></li>
+        
+        <li><p>Description</p><input onChange={handleChange} name="description" value={artwalk.description}></input></li>
+        
+        <li><p>Date</p><input onChange={handleChange} name="date" value={artwalk.date}></input></li>
         <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
@@ -77,9 +77,9 @@ function App() {
           <div>
             <h1>Artwalks</h1>
             <h1>{artwalk.title}</h1>
-            <p>{artwalk.description}</p>
+            <p className="pDescription">{artwalk.description}</p>
             <p>{artwalk.date}</p>
-            <button class="btn btn-primary" onClick={() => deleteArtwalk(artwalk._id)}>DELETE</button>
+            <button class="btn btn-primary" onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
           </div>
         ) 
       })}

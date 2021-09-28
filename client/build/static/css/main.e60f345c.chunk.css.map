@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,KACE,eACF,CAEA,aACA,eACA,CAEA,cACE,eAAgB,CAChB,eACF","file":"main.e60f345c.chunk.css","sourcesContent":[".App {\n  text-align: left;\n}\n\n.formPost li {\nlist-style: none;\n}\n\n.pDescription {\n  text-align: left;\n  max-width: 270px;\n}"]}

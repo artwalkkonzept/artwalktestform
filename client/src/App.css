@@ -1,7 +1,12 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-li.formPost {
+.formPost li {
 list-style: none;
+}
+
+.pDescription {
+  text-align: left;
+  max-width: 270px;
 }
