@@ -4,7 +4,7 @@ import './App.css';
 import axios from "axios";
 
 function App() {
-  const [artwaks, setArtwaks] = useState([
+  const [artwak, setArtwaks] = useState([
     {
       title: '',
       genre: '',
