@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
+//const url = process.env.MONGO_URL || 'mongodb://localhost/artwalk_db';
 const url = 'mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority';
 //mongoose
 //ngoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority")
