@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 //import logo from './logo.svg';
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
 
@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div className="App" style={{ marginTop: 20 }}>
-      <h3>Add Artwalk</h3>
+      <h3>Create Artwalk</h3>
       <form className="formPost">
       <label>ArtWalk: </label>
       <li><input id="Name" onChange={handleChange} name="name" value={artwalk.name}></input></li>
