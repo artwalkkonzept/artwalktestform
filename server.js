@@ -9,14 +9,16 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
+const url = 'mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority';
 //mongoose
-mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority")
+//ngoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority")
+
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 
 //data schema and model
 const artwalkSchema = {
     title: String,
-    description: String,
-    date: String
+    description: String
 }
 
 const Artwalk = mongoose.model("Artwalk", artwalkSchema);
