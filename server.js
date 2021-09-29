@@ -13,8 +13,8 @@ app.use(cors());
 
 ///const url = 'mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority';
 //mongoose
-mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
-
+mongoose.connect("mongodb+srv://frankild:pc8307pc@cluster0.hudw9.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
+//mongodb+srv://frankild:pc8307pc@cluster0.hudw9.mongodb.net?retryWrites=true&w=majority
 //mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 
 //data schema and model
