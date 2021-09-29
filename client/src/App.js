@@ -68,8 +68,9 @@ function App() {
       {artwalks.map(artwalk => {
         return (
           <div className="formPost">
-            <h1>Artwalks</h1>
-            <h1 className="h1Title">{artwalk.title}</h1>
+            <h3>List of Artwalks</h3>
+            <hr />
+            <h4 className="h1Title">{artwalk.title}</h4>
             <p className="pDescription">{artwalk.description}</p>
             <button onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
           </div>
