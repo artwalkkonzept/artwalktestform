@@ -5,9 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
 
-
-import DateTimePicker from 'react-datetime-picker';
-
 function App() {
   const [artwalks, setArtwalks] = useState([
     {
@@ -23,9 +20,6 @@ function App() {
     }
   )
 
-  const [value, onChange] = useState(new Date())
-  
-    
   useEffect(() => {
     fetch('/artwalks').then(res => {
       if(res.ok) {
@@ -61,11 +55,22 @@ function App() {
   }
 
   return (
+    <div className="container" style={{ marginTop: 20 }}>
     <div className="App">
+        <h3>Create New Article</h3>
       <h3>Add Artwalk</h3>
-      <form className="formPost">
-        <p>Title</p><input id="Title" onChange={handleChange} name="title" value={artwalk.title}></input>
-        <p>Description</p><input id="Description" onChange={handleChange} name="description" value={artwalk.description}></input>
+      <form className="formPost" onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <label>Title of the article: </label><input id="Title" onChange={handleChange} name="title" value={artwalk.title} /></div>
+            <div className="form-group">
+            <label>Article's description: </label><input id="Description" onChange={handleChange} name="description" value={artwalk.description}/></div>
+            <div className="form-group">
+            <input
+              type="submit"
+              value="Create artwalk"
+              className="btn btn-primary"
+            />
+          </div>
         <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
@@ -75,19 +80,12 @@ function App() {
             <h1>Artwalks</h1>
             <h1 className="h1Title">{artwalk.title}</h1>
             <p className="pDescription">{artwalk.description}</p>
-            
-      <div>
-        <DateTimePicker
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-
             <button class="btn btn-primary" onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
           </div>
         ) 
       })}
     </div>
+          </div>
   );
 }
 
