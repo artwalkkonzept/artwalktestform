@@ -65,10 +65,10 @@ function App() {
       <li><button  className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button></li>
       </form>
 
+      <h3>List of Artwalks</h3>
       {artwalks.map(artwalk => {
         return (
           <div className="formPost">
-            <h3>List of Artwalks</h3>
             <hr />
             <h4 className="h1Title">{artwalk.title}</h4>
             <p className="pDescription">{artwalk.description}</p>
