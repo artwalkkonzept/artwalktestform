@@ -58,14 +58,14 @@ function App() {
     <div className="App" style={{ marginTop: 20 }}>
       <h3>Add Artwalk</h3>
       <form className="formPost">
-      <label>Title of the Artwalk: </label>
+      <label>ArtWalk: </label>
       <li><input id="Name" onChange={handleChange} name="name" value={artwalk.name}></input></li>
-      <label>Bilds of the Artwalk: </label>
+      <label>Bilds: </label>
       <li><input id="Bilds" onChange={handleChange} name="bilds" value={artwalk.bilds}></input></li>
       <li><button  className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button></li>
       </form>
 
-      <h3>List of Artwalks</h3>
+      <h3>Liste der Artwalks</h3>
       {artwalks.map(artwalk => {
         return (
           <div className="formPost">
