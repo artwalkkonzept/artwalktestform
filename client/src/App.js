@@ -55,14 +55,12 @@ function App() {
   }
 
   return (
-    <div className="App container" style={{ marginTop: 20 }}>      
-    <h3>Add Artwalk</h3>
-      <form className="formPost" onSubmit={this.onSubmit}>
-            <label>Title of the Artwalk: </label>
-            <input id="Title" onChange={handleChange} name="title" value={artwalk.title}></input>
-            <label>Description of the Artwalk: </label>
-            <input id="Description" onChange={handleChange} name="description" value={artwalk.description}></input>
-        <button className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button>
+    <div className="App" style={{ marginTop: 20 }}>
+      <h3>Add Artwalk</h3>
+      <form className="formPost">
+      <label>Title of the Artwalk: </label><input id="Title" onChange={handleChange} name="title" value={artwalk.title}></input>
+      <label>Discription of the Artwalk: </label><input id="Description" onChange={handleChange} name="description" value={artwalk.description}></input>
+        <button  className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button>
       </form>
 
       {artwalks.map(artwalk => {
