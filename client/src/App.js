@@ -5,23 +5,27 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
 
+
+import DateTimePicker from 'react-datetime-picker';
+
 function App() {
   const [artwalks, setArtwalks] = useState([
     {
       title: '',
-      description: '',
-      date: ''
+      description: ''
     }
   ])
 
   const [artwalk, setArtwalk] = useState(
     {
       title: '',
-      description: '',
-      date: ''
+      description: ''
     }
   )
 
+  const [value, onChange] = useState(new Date())
+  
+    
   useEffect(() => {
     fetch('/artwalks').then(res => {
       if(res.ok) {
@@ -46,8 +50,7 @@ function App() {
     e.preventDefault();
     const newArtwalk = {
       title: artwalk.title,
-      description: artwalk.description,
-      date: artwalk.date
+      description: artwalk.description
     }
 
     axios.post('/newartwalk', newArtwalk);
@@ -63,8 +66,6 @@ function App() {
       <form className="formPost">
         <p>Title</p><input id="Title" onChange={handleChange} name="title" value={artwalk.title}></input>
         <p>Description</p><input id="Description" onChange={handleChange} name="description" value={artwalk.description}></input>
-        
-        <p>Date</p><input id="Date" onChange={handleChange} name="date" value={artwalk.date}></input>
         <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
@@ -74,7 +75,14 @@ function App() {
             <h1>Artwalks</h1>
             <h1 className="h1Title">{artwalk.title}</h1>
             <p className="pDescription">{artwalk.description}</p>
-            <p>{artwalk.date}</p>
+            
+      <div>
+        <DateTimePicker
+          onChange={onChange}
+          value={value}
+        />
+      </div>
+
             <button class="btn btn-primary" onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
           </div>
         ) 

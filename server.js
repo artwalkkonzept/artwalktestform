@@ -30,12 +30,10 @@ app.get('/artwalks', function(req, res) {
 app.post('/newartwalk', function(req, res) {
     const title = req.body.title;
     const description = req.body.description;
-    const date = req.body.date;
 
     const newArtwalk = new Artwalk({
         title,
-        description,
-        date
+        description
     });
 
     newArtwalk.save();
