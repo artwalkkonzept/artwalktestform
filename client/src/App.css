@@ -11,6 +11,10 @@ body {
 list-style: none;
 }
 
+.btn {
+margin:8px;
+}
+
 .pDescription {
   text-align: left;
   max-width: 270px;
