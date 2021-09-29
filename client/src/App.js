@@ -8,15 +8,15 @@ import './App.css';
 function App() {
   const [artwalks, setArtwalks] = useState([
     {
-      title: '',
-      description: ''
+      name: '',
+      bilds: ''
     }
   ])
 
   const [artwalk, setArtwalk] = useState(
     {
-      title: '',
-      description: ''
+      name: '',
+      bilds: ''
     }
   )
 
@@ -43,8 +43,8 @@ function App() {
   function addArtwalk(e) {
     e.preventDefault();
     const newArtwalk = {
-      title: artwalk.title,
-      description: artwalk.description
+      name: artwalk.name,
+      bilds: artwalk.bilds
     }
 
     axios.post('/newartwalk', newArtwalk);
@@ -59,9 +59,9 @@ function App() {
       <h3>Add Artwalk</h3>
       <form className="formPost">
       <label>Title of the Artwalk: </label>
-      <li><input id="Title" onChange={handleChange} name="title" value={artwalk.title}></input></li>
-      <label>Discription of the Artwalk: </label>
-      <li><input id="Description" onChange={handleChange} name="description" value={artwalk.description}></input></li>
+      <li><input id="Name" onChange={handleChange} name="name" value={artwalk.name}></input></li>
+      <label>Bilds of the Artwalk: </label>
+      <li><input id="Bilds" onChange={handleChange} name="bilds" value={artwalk.bilds}></input></li>
       <li><button  className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button></li>
       </form>
 
@@ -70,8 +70,8 @@ function App() {
         return (
           <div className="formPost">
             <hr />
-            <h4 className="h1Title">{artwalk.title}</h4>
-            <p className="pDescription">{artwalk.description}</p>
+            <h4 className="h1Title">{artwalk.name}</h4>
+            <p className="pDescription">{artwalk.bilds}</p>
             <button onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
           </div>
         ) 

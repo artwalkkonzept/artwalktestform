@@ -19,8 +19,8 @@ mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.n
 
 //data schema and model
 const artwalkSchema = {
-    title: String,
-    description: String
+    name: String,
+    bilds: String
 }
 
 const Artwalk = mongoose.model("Artwalk", artwalkSchema);
@@ -32,12 +32,12 @@ app.get('/artwalks', function(req, res) {
 
 //add artwalk
 app.post('/newartwalk', function(req, res) {
-    const title = req.body.title;
-    const description = req.body.description;
+    const name = req.body.name;
+    const bilds = req.body.bilds;
 
     const newArtwalk = new Artwalk({
-        title,
-        description
+        name,
+        bilds
     });
 
     newArtwalk.save();
