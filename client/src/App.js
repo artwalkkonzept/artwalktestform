@@ -65,13 +65,8 @@ function App() {
             <div className="form-group">
             <label>Article's description: </label><input id="Description" onChange={handleChange} name="description" value={artwalk.description}/></div>
             <div className="form-group">
-            <input
-              type="submit"
-              value="Create artwalk"
-              className="btn btn-primary"
-            />
+              <button onClick={addArtwalk}>Add artwalk</button>
           </div>
-        <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
       {artwalks.map(artwalk => {
