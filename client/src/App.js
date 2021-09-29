@@ -55,8 +55,7 @@ function App() {
   }
 
   return (
-    <div className="container" style={{ marginTop: 20 }}>
-    <div className="App">
+    <div className="App container" style={{ marginTop: 20 }}>
         <h3>Create New Article</h3>
       <h3>Add Artwalk</h3>
       <form className="formPost" onSubmit={this.onSubmit}>
@@ -65,8 +64,13 @@ function App() {
             <div className="form-group">
             <label>Article's description: </label><input id="Description" onChange={handleChange} name="description" value={artwalk.description}/></div>
             <div className="form-group">
-              <button onClick={addArtwalk}>Add artwalk</button>
+            <input
+              type="submit"
+              value="Create artwalk"
+              className="btn btn-primary"
+            />
           </div>
+        <button onClick={addArtwalk}>Add artwalk</button>
       </form>
 
       {artwalks.map(artwalk => {
@@ -80,7 +84,6 @@ function App() {
         ) 
       })}
     </div>
-          </div>
   );
 }
 
