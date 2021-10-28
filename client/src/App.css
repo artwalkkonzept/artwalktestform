@@ -1,0 +1,33 @@
+body {
+  display: block;
+  margin: 8px;
+}
+
+.App {
+  text-align: left;
+}
+
+.formPost li {
+list-style: none;
+}
+
+.btn {
+margin:8px;
+}
+
+.pDescription {
+  text-align: left;
+  max-width: 270px;
+  margin:8px;
+}
+
+.h1Title {
+  text-align: left;
+  max-width: 270px;
+  margin:8px;
+}
+hr {
+  text-align:left;
+  margin-left:0;
+  max-width: 270px;
+}
