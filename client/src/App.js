@@ -1,26 +1,27 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect} from 'react';
+//import logo from './logo.svg';
 import axios from "axios";
+//import 'bootstrap/dist/css/bootstrap.css';
 
-import "./App.css";
-import Logo from "./logo/Logo";
+import './App.css';
 
 function App() {
   const [artwalks, setArtwalks] = useState([
     {
-      name: "",
-      bilds: ""
+      name: '',
+      bilds: ''
     }
   ])
 
   const [artwalk, setArtwalk] = useState(
     {
-      name: "",
-      bilds: ""
+      name: '',
+      bilds: ''
     }
   )
 
   useEffect(() => {
-    fetch("/artwalks").then(res => {
+    fetch('/artwalks').then(res => {
       if(res.ok) {
         return res.json()
       }
@@ -46,11 +47,11 @@ function App() {
       bilds: artwalk.bilds
     }
 
-    axios.post("/newartwalk", newArtwalk);
+    axios.post('/newartwalk', newArtwalk);
   }
 
   function deleteArtwalk(id) {
-    axios.delete("/delete/" + id);
+    axios.delete('/delete/' + id);
   }
 
   return (
@@ -67,13 +68,12 @@ function App() {
       <h3>Liste der Artwalks</h3>
       {artwalks.map(artwalk => {
         return (
-          <>
+          <div className="formPost">
             <hr />
             <h4 className="h1Title">{artwalk.name}</h4>
             <p className="pDescription">{artwalk.bilds}</p>
             <button onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
-            <Logo/>
-          </>
+          </div>
         ) 
       })}
     </div>
