@@ -9,9 +9,9 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
-///const url = process.env.MONGO_URL || "mongodb://localhost/artwalk_db";
+///const url = process.env.MONGO_URL || 'mongodb://localhost/artwalk_db';
 
-///const url = "mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority";
+///const url = 'mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority';
 //mongoose frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/Test
 //mongoose.connect("mongodb+srv://frankild:pc8307pc@cluster0.hudw9.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
 
@@ -28,12 +28,12 @@ const artwalkSchema = {
 const Artwalk = mongoose.model("Artwalk", artwalkSchema);
 
 //API routes
-app.get("/artwalks", function(req, res) {
+app.get('/artwalks', function(req, res) {
     Artwalk.find().then(artwalks => res.json(artwalks));
 })
 
 //add artwalk
-app.post("/newartwalk", function(req, res) {
+app.post('/newartwalk', function(req, res) {
     const name = req.body.name;
     const bilds = req.body.bilds;
 
@@ -46,7 +46,7 @@ app.post("/newartwalk", function(req, res) {
 
 });
 
-app.delete("/delete/:id", function(req, res) {
+app.delete('/delete/:id', function(req, res) {
     const id = req.params.id;
     Artwalk.findByIdAndDelete({_id: id}, function(err) {
         if(!err) {
@@ -57,10 +57,10 @@ app.delete("/delete/:id", function(req, res) {
     })
 });
 
-if(process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     })
 }
 

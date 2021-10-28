@@ -1,25 +1,32 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect} from 'react';
+//import logo from './logo.svg';
 import axios from "axios";
+//import 'bootstrap/dist/css/bootstrap.css';
+//import AppForm from "./components/AppForm"
+import './App.css';
+import Nav from './Nav';
+import AppForm from "./AppForm";
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
 
-import "./App.css";
-
-function App() {
-  const [artwalks, setArtwalks] = useState([
+function App(props) {
+  const [setArtwalks] = useState([
     {
-      name: "",
-      bilds: ""
+      name: '',
+      bilds: ''
     }
   ])
 
   const [artwalk, setArtwalk] = useState(
     {
-      name: "",
-      bilds: ""
+      name: '',
+      bilds: ''
     }
   )
 
   useEffect(() => {
-    fetch("/artwalks").then(res => {
+    fetch('/artwalks').then(res => {
       if(res.ok) {
         return res.json()
       }
@@ -45,35 +52,26 @@ function App() {
       bilds: artwalk.bilds
     }
 
-    axios.post("/newartwalk", newArtwalk);
-  }
-
-  function deleteArtwalk(id) {
-    axios.delete("/delete/" + id);
+    axios.post('/newartwalk', newArtwalk);
   }
 
   return (
     <div className="App" style={{ marginTop: 20 }}>
       <h3>Create Artwalk</h3>
-      <form className="formPost">
+      <ol><form className="formPost">
       <label>ArtWalk: </label>
       <li><input id="Name" onChange={handleChange} name="name" value={artwalk.name}></input></li>
       <label>Bilds: </label>
       <li><input id="Bilds" onChange={handleChange} name="bilds" value={artwalk.bilds}></input></li>
       <li><button  className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button></li>
-      </form>
+      </form></ol>
 
       <h3>Liste der Artwalks</h3>
-      {artwalks.map(artwalk => {
-        return (
-          <div className="formPost">
-            <hr />
-            <h4 className="h1Title">{artwalk.name}</h4>
-            <p className="pDescription">{artwalk.bilds}</p>
-            <button onClick={() => deleteArtwalk(artwalk._id)}>Delete</button>
-          </div>
-        ) 
-      })}
+
+      <Router>
+      <Nav />
+      <AppForm path="/AppForm"></AppForm>
+      </Router>
     </div>
   );
 }
