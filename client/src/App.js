@@ -1,32 +1,32 @@
-import React, {useState, useEffect} from 'react';
-//import logo from './logo.svg';
+import React, {useState, useEffect} from "react";
+//import logo from "./logo.svg";
 import axios from "axios";
-//import 'bootstrap/dist/css/bootstrap.css';
+//import "bootstrap/dist/css/bootstrap.css";
 //import AppForm from "./components/AppForm"
-import './App.css';
-import Nav from './Nav';
+import "./App.css";
+import Nav from "./Nav";
 import AppForm from "./AppForm";
 import {
   BrowserRouter as Router,
-} from 'react-router-dom';
+} from "react-router-dom";
 
 function App(props) {
   const [setArtwalks] = useState([
     {
-      name: '',
-      bilds: ''
+      name: "",
+      bilds: ""
     }
   ])
 
   const [artwalk, setArtwalk] = useState(
     {
-      name: '',
-      bilds: ''
+      name: "",
+      bilds: ""
     }
   )
 
   useEffect(() => {
-    fetch('/artwalks').then(res => {
+    fetch("/artwalks").then(res => {
       if(res.ok) {
         return res.json()
       }
@@ -52,7 +52,7 @@ function App(props) {
       bilds: artwalk.bilds
     }
 
-    axios.post('/newartwalk', newArtwalk);
+    axios.post("/newartwalk", newArtwalk);
   }
 
   return (
