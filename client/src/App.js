@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-//import logo from './logo.svg';
 import axios from "axios";
-//import 'bootstrap/dist/css/bootstrap.css';
+
+import Logo from "./logo/Logo";
 
 import './App.css';
 
@@ -76,6 +76,7 @@ function App() {
           </div>
         ) 
       })}
+      <Logo />
     </div>
   );
 }
