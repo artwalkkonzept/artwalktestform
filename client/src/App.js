@@ -60,7 +60,7 @@ function App() {
       <form className="formPost">
       <label>ArtWalk: </label>
       <li><input id="Name" onChange={handleChange} name="name" value={artwalk.name}></input></li>
-      <label>Bilds: </label>
+      <label>Bilder: </label>
       <li><input id="Bilds" onChange={handleChange} name="bilds" value={artwalk.bilds}></input></li>
       <li><button  className="btn btn-primary" onClick={addArtwalk}>Add artwalk</button></li>
       </form>
